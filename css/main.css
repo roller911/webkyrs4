@@ -6,7 +6,8 @@
 	padding:0}
 
 body {
-	background:#bdc3c7;
+  display: flex;
+	background:#;
 	line-height:1.5;
 	font-family:sans-serif;
 	text-transform:uppercase;
