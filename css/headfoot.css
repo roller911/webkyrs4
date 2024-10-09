@@ -24,40 +24,63 @@ header {
 
 .sidebar {
     position: fixed;
-    right: -250px; /* Скрыто за пределами экрана */
+    right: -300px; /* Скрыто за пределами экрана */
     top: 0;
-    width: 250px;
+    width: 300px;
     height: 100%;
     background-color: #333;
     color: white;
     transition: left 0.3s ease;
-    padding: 20px;
+    padding: 10px;
     box-shadow: 2px 0 5px rgba(0,0,0,0.5);
 }
 
 .sidebar.open {
     right: 0; /* Показываем меню */
 }
-.sidebar li {
-   --fill-color: #198CE6;
+
+.sidebar li.hidden {
+    display: none; /* Скрываем элементы */
+}
+
+.sidebar ul{
+list-style-type: none;
+  align-items: start; 
+   padding: 0;
+   padding-top: 15px;
+}
+.sidebar ul li {
+  padding-left: 25px;
   position: relative;
+}
+.sidebar ul li a{
+  color:#fd1f33;
+  --fill-color: #fd1f33;
   display: block;
-  padding: 4px 0;
+  font-size: 18px;
+  font:sans-serif;
   text-decoration: none;
   text-transform: uppercase;
-  -webkit-text-stroke: 1px var(--fill-color);
+  -webkit-text-stroke: px var(--fill-color);
   background: linear-gradient(var(--fill-color) 0 100%) left/0 no-repeat;
-  color: transparent;
   -webkit-background-clip: text;
           background-clip: text;
   transition: 0.5s linear;
 }
-.sidebar ul {
-
+.sidebar ul li a:hover{
+  color: #fff;
+  background-size: 100%;
 }
-
-.sidebar li.hidden {
-    display: none; /* Скрываем элементы */
+.sidebar ul li:before {
+  content: ''; /* Пустой контент для псевдоэлемента */
+  background-image: url('../img/icons824.png');
+  background-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 button {

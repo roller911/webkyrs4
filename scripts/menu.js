@@ -1,9 +1,9 @@
-const menu_but = document.getElementById('menu-but');
-const sidebar = document.getElementById('sidebar');
-const close_but = document.getElementById('close-but');
-const search_i = document.getElementById('searchbar');
-const item_list = document.getElementById('itemli');
-const items = item_list.getElementsByTagName('li');
+var menu_but = document.getElementById('menu-but');
+var sidebar = document.getElementById('sidebar');
+var close_but = document.getElementById('close-but');
+var search_i = document.getElementById('searchbar');
+var item_list = document.getElementById('itemli');
+var items = item_list.getElementsByTagName('li');
 
 
 menu_but.addEventListener('click', () => {
