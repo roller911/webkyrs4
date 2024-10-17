@@ -23,8 +23,9 @@ header {
 }
 
 .sidebar {
+
     position: fixed;
-    right: -300px; /* Скрыто за пределами экрана */
+    right: -300px; /* Скрыто*/
     top: 0;
     width: 300px;
     height: 100%;
@@ -33,14 +34,15 @@ header {
     transition: left 0.3s ease;
     padding: 10px;
     box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+    z-index: 2;
 }
 
 .sidebar.open {
-    right: 0; /* Показываем меню */
+    right: 0; 
 }
 
 .sidebar li.hidden {
-    display: none; /* Скрываем элементы */
+    display: none; 
 }
 
 .sidebar ul{
