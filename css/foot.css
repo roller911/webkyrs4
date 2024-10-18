@@ -1,0 +1,26 @@
+.footer{
+    background-image: 
+    padding: 20px;
+    color: #0e0b0d;
+
+}
+.footer li a {
+    display: block;
+}
+
+.footer-icons a {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 20px;
+   
+}
+.footer a:hover {
+    color: rgb(255,0,0);
+}
+.footer h4 {
+    font-size: 25px;
+    text-transform: uppercase;
+    color: rgba(255, 0, 15, 1);
+    border-bottom: 2px solid #0e0b0d;
+    padding-bottom: 5px;
+}
