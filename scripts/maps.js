@@ -2,18 +2,60 @@ ymaps.ready(init);
 
 function init() {
     var myMap = new ymaps.Map("map", {
-        center: [56.326552, 44.024662],
-        zoom: 14
+        center: [21.521757, -15.781167],
+        zoom: 2
     });
+    var moscow = [55.749863, 37.6177];
+    var turkey = [38.9574, 35.241368];
+    var cuba = [21.521757, -77.781167];
+    var usa = [38.8951, -77.0364];
+
 
   
-    myMap.geoObjects.add(new ymaps.Placemark([56.326552, 44.024662], {
-        hintContent: 'Корпус №1 НГТУ им. Р.Е. Алексеева',
-        balloonContent: 'Корпус №1 НГТУ им. Р.Е. Алексеева'
+    myMap.geoObjects.add(new ymaps.Placemark(cuba, {
+        hintContent: 'Куба',
+        balloonContent: 'Куба'
     }, {
         preset: 'islands#dotIcon',
-        iconColor: '#782678'
+        iconColor: '#0000FF'
     }));
+
+   myMap.geoObjects.add(new ymaps.Placemark(moscow, {
+        hintContent: 'Москва',
+        balloonContent: 'Москва'
+    }, {
+        preset: 'islands#dotIcon',
+        iconColor: '#FF0000'
+    }));
+
+    myMap.geoObjects.add(new ymaps.Placemark(usa, {
+        hintContent: 'США - Вашингтон',
+        balloonContent: 'США - Вашингтон'
+    }, {
+        preset: 'islands#dotIcon',
+        iconColor: '#0000FF'
+    }));
+
+     myMap.geoObjects.add(new ymaps.Placemark(turkey, {
+        hintContent: 'Турция - Стамбул',
+        balloonContent: 'Турция - Стамбул'
+    }, {
+        preset: 'islands#dotIcon',
+        iconColor: '#FF0000'
+    }));
+
+    var polyline1 = new ymaps.Polyline([moscow, turkey], {}, {
+        strokeColor: '#FF0000',
+        strokeWidth: 4
+        });
+        myMap.geoObjects.add(polyline1);
+
+    var polyline2 = new ymaps.Polyline([cuba, usa], {}, {
+        strokeColor: '#0000FF',
+        strokeWidth: 4
+        });
+        myMap.geoObjects.add(polyline2);
+
 
 
     ymaps.geolocation.get({
@@ -21,66 +63,28 @@ function init() {
         mapStateAutoApply: true,
         params: {
             enableHighAccuracy: true,
-            timeout: 200
+            timeout: 2000
         }
     }).then(function(result) {
         var userCoordinates = result.geoObjects.get(0).geometry.getCoordinates();
         var userAddress = result.geoObjects.get(0).properties.get('text');
         console.log(userCoordinates);
-        console.log(userAddress);
-
       
         myMap.geoObjects.add(new ymaps.Placemark(userCoordinates, {
             hintContent: 'Ваше местоположение ' + userAddress,
             balloonContent: 'Адрес: ' + userAddress
         }, {
             preset: 'islands#dotIcon',
-            iconColor: '#542542'
+            iconColor: '#0FF00F'
         }));
 
     
-        myMap.setCenter(userCoordinates, 15);
-        plotRoute(myMap, userCoordinates, [56.326552, 44.024662], userAddress);
+        myMap.setCenter(userCoordinates, 2);
+        addMarkers(myMap, userCoordinates, userAddress);
     }, function(err) {
         console.log('Ошибка: ' + err);
         if (err instanceof ymaps.geolocation.Error) {
             console.log('Ошибка геолокации: ' + err.message);
         }
     });
-}
-
-function plotRoute(myMap, fromCoordinates, toCoordinates, userAddress) {
-    ymaps.route([fromCoordinates, toCoordinates], {
-        mapStateAutoApply: true,
-        viaIndexes: [0, 1],
-        routePathEditorEnabled: true,
-        routeEditorEnabled: true
-    }).then(function(route) {
-        myMap.geoObjects.add(route);
-        addMarkers(myMap, fromCoordinates, toCoordinates, userAddress);
-        var distance = route.properties.get("distance");
-        console.log("Расстояние по дорогам: " + distance + "м");
-        document.getElementById('distance').innerHTML = "Расстояние по дорогам: " + (distance / 1000).toFixed(2) + " км";
-    }, function(error) {
-        console.log('Ошибка построения маршрута: ' + error.message);
-    });
-}
-
-function addMarkers(myMap, fromCoordinates, toCoordinates, userAddress) {
-    myMap.geoObjects.add(new ymaps.Placemark(fromCoordinates, {
-        hintContent: 'Ваше местоположение ' + userAddress,
-        balloonContent: 'Адрес: ' + userAddress
-    }, {
-        preset: 'islands#dotIcon',
-        iconColor: '#FF0000'
-    }));
-
- 
-    myMap.geoObjects.add(new ymaps.Placemark(toCoordinates, {
-        hintContent: 'Корпус №1 НГТУ им. Р.Е. Алексеева',
-        balloonContent: 'Корпус №1 НГТУ им. Р.Е. Алексеева'
-    }, {
-        preset: 'islands#dotIcon',
-        iconColor: '#0000FF'
-    }));
 }
