@@ -17,13 +17,8 @@ header {
 .menu-bar{
  margin: .5rem;
 }
-.menu-but
-{
-
-}
 
 .sidebar {
-
     position: fixed;
     right: -300px; /* Скрыто*/
     top: 0;
@@ -85,6 +80,18 @@ list-style-type: none;
   transform: translateY(-50%);
 }
 
-button {
-    margin-bottom: 20px;
+.menu_button {
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px;
+}
+.menu-lines {
+    width: 30px;
+    height: 4px;
+    background-color: #FFFFFF;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+.menu-lines:hover{
+  background-color: #000000;
 }

@@ -27,10 +27,16 @@
 		<div class="nameBar">Карибский кризис</div>
     </article>
 		<div class="menu-bar">
-			<button id="menu-but">Меню</button>
+			<div class="menu_button" id="menu-but">
+            <div class="menu-lines"></div>
+            <div class="menu-lines"></div>
+            <div class="menu-lines"></div>         
+            </div>
     <div id="sidebar" class="sidebar">
         <button id="close-but" class="btn-close btn-close-white" aria-label="Close"></button>
-       <form><input type="text" id="searchbar" class="form-control" placeholder="Введите текст для поиска..."></form>
+       
+       <form style="padding-top:30px;">
+        <input type="text" id="searchbar" class="form-control" placeholder="Введите текст для поиска..."></form>
         
         <ul id="itemli">      
             <li><a href="index.html">Главная</a></li>
@@ -79,13 +85,17 @@
                 <div id="map" style="width:60%; height: 600px;">
                 </div>
                 <div class = "map-info">
-                    <h4 class="h4name" style="text-align: center;">Размещение ракет на карте и расстояние.</h4>
-                    <div style="padding-top: 15px;">
-                        <a style="color:blue;"> Синиий цветом обазначено расстояние между США (Вашингтон) и Кубы.</a>
+                    <h4 class="h4name" style="text-align: center;">Размещение ракет на карте и их расстояние до столиц двух держав.</h4>
+                    <div style="padding-top: 25px;">
+                        <a style="color:blue;"> Синиий цветом обазначено расстояние от США (Вашингтон) до Кубы и равна: <a id="distance1"></a></a>
                     </div>
-                        <div>
-                        <a style="color: red;"> Красным цветом обозначено расстояние между Москвой и Турцией.</a>
-                    </div>
+                     <div><a>В самом узком месте Флоридского пролива расстояние между США и Кубой составляет примерно 180 км.</a>
+                        </div>
+                        <div style="padding-top: 20px;">
+                        <a style="color: red;"> Красным цветом обозначено расстояние от Москвы до Турции и равна:<a id="distance2"></a></a>
+                        </div>
+                        <div><a>Расстояние от г.Трабзон (город на Севере Турции) до г.Сочи составляет 281 км по прямой.</a>
+                        </div>
                 </div>
 
         </div>
@@ -108,7 +118,7 @@
                         <ul class="list-unstyled">
                             <li><a href="Tel: 88314338605">8(831)433-86-05</a></li>
                             <li><a href="">roller911@yandex.ru</a></li>
-                            <li>Редкозубов А.А</a></li>
+                            <li><a>Редкозубов А.А</a></li>
                         </ul>
                     </div>
                     <div class="col-md-3 col-xs-12 col-6">
