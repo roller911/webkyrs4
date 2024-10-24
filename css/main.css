@@ -22,7 +22,6 @@
   	background: linear-gradient(to bottom,transparent 80%, rgba(205, 0, 45, 0.5) 100%); /* Градиент от прозрачного к черному */
 }
 .header-image {
-
     width: 100%;
     height: 400px;
     object-fit: cover;
@@ -31,6 +30,7 @@
     overflow: hidden;
  		position: static;
   }
+
 .h1name {
 	background-color: #f0f0f0;
 	 padding: 20px;
@@ -40,11 +40,9 @@
 	 border-radius: 5px;
 	 box-shadow: 0 15px 20px rgba(255, 0,0 ,0.255);
 	 text-transform:uppercase;
-	 display: flex;
+	 display: flex ;
 	 justify-content: center;
 }
-
-
 
 .body {
 	background-color:#2b2b2bdb;
@@ -63,7 +61,18 @@
   	box-shadow: 0 15px 20px rgba(255, 0,0 ,0.255);
   	overflow: hidden;
 }
-
+.container-flex{
+	display: grid;
+  grid-template-columns: 1fr 1fr; 
+	width: 100%;
+	gap: 20px;
+	align-items: stretch;
+}
+.container-image{
+	display: flex; /* Для выравнивания содержимого внутри контейнера */
+  align-items: center; /* Выравнивает содержимое по вертикали */
+  justify-content: center; 
+}
 .carousel {
 		position: relative;
 		z-index: 1;
