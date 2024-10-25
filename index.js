@@ -8,9 +8,24 @@ app.use('/css', express.static(path.join(__dirname, 'public/css')));
 app.use('/img', express.static(path.join(__dirname, 'public/img')));
 app.use('/bootstrap', express.static(path.join(__dirname, 'public/bootstrap')));
 
-app.get('/', (req, res) => {
+
+
+  app.set('view engine', 'ejs');
+  app.set('views', path.join(__dirname, 'public/templates/views'));
+
+  app.get('/', (req, res) => {
   res.setHeader('Content-Type', 'text/html');
-  res.sendFile(path.join(__dirname, 'public/templates/views/index.ejs'));
+  res.render('index');
+});
+
+  app.get('/hronology', (req, res) => {
+  res.setHeader('Content-Type', 'text/html');
+  res.render('hronology');
+});
+  
+  app.get('/media', (req, res) => {
+  res.setHeader('Content-Type', 'text/html');
+  res.render('media');
 });
 
 app.listen(port, () => {
