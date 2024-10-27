@@ -1,6 +1,9 @@
 .comments-main {
   	width: 100%;
   	overflow: hidden;
+  	padding: 20px;
+
+
 }
 .comments-content{
 	background-color: #f0f0f0;
@@ -22,6 +25,6 @@
       max-width: 768px;
       padding: 15px;
       margin: 0 auto;
-      margin-bottom: 30px; /* Уменьшаем отступ на меньших экранах */
+      margin-bottom: 30px;
     }
   }
