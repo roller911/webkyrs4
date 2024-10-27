@@ -42,6 +42,7 @@
 	 text-transform:uppercase;
 	 display: flex ;
 	 justify-content: center;
+	 text-align: center;
 }
 
 .body {

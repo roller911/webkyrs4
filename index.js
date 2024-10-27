@@ -7,7 +7,7 @@ app.use('/js', express.static(path.join(__dirname, 'public/scripts')));
 app.use('/css', express.static(path.join(__dirname, 'public/css')));
 app.use('/img', express.static(path.join(__dirname, 'public/img')));
 app.use('/bootstrap', express.static(path.join(__dirname, 'public/bootstrap')));
-
+app.use('/source', express.static(path.join(__dirname, 'public/source')));
 
 
   app.set('view engine', 'ejs');
@@ -27,6 +27,7 @@ app.use('/bootstrap', express.static(path.join(__dirname, 'public/bootstrap')));
   res.setHeader('Content-Type', 'text/html');
   res.render('media');
 });
+
 
 app.listen(port, () => {
   console.log(`Сервер запущен на http://localhost:${port}`);

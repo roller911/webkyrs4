@@ -3,7 +3,7 @@
 <body class="body">
 <%- include('../elements/header'); %>
 <div class="h1name">
-		<h2>Карибский кризиc в исскустве</h2>
+		<h2>Карибский кризис в мировом исскустве</h2>
 	</div>
 <div class="container-main">
 <h4 class="text-center">Кино</h4>
@@ -27,12 +27,46 @@
 <div class="container-main">
 <h4 class="text-center">Музыка</h4>
 <div class="list-group">
-    <a class="list-group-item">1962 — «Молитвы» для баритона и камерного оркестра композитора Луиджи Даллапикколы. Партитура демонстративно датирована днём обращения Кеннеди к народу.</a>
-    <a class="list-group-item">1964 — песня Фила Оукса «Talking Cuban Crisis».</a>
-    <a class="list-group-item">1985 — песня Стинга «Russians».</a>
-    <a class="list-group-item">2009 — вышел сингл «Caribbean Crisis» от проекта Ex-Plosion. Посвящённая событиям холодной войны композиция также вошла в студийный альбом проекта, попав на первое место и в сводную двадцатку лучших Progressive House треков за 2012 год по версии британского онлайн-магазина Juno.</a>
-    <a class="list-group-item">2017 — песня «Завтра война» от проекта Melancholic, выпущенная в альбоме «Millennium».</a>
-</div>
+   
+    <a class="list-group-item" data-bs-toggle="collapse" data-bs-target="#collapsemusic1">1962 — «Молитвы» для баритона и камерного оркестра композитора Луиджи Даллапикколы. Партитура демонстративно датирована днём обращения Кеннеди к народу.</a>
+    <div class="collapse" id="collapsemusic1">
+        <div class="card card-body">
+          Некоторый заполнитель для компонента сворачивания. Эта панель по умолчанию скрыта, но открывается, когда пользователь активирует соответствующий триггер.
+    </div>
+    </div>
+
+    <a class="list-group-item" data-bs-toggle="collapse" data-bs-target="#collapsemusic2">1964 — песня Фила Оукса «Talking Cuban Crisis».</a>
+    <div class="collapse" id="collapsemusic2">
+        <div class="card card-body">
+          <audio controls>
+          <source src="/source/TalkingCubanCrisis.mp3" type="audio/mpeg">
+          </audio>
+    </div>
+    </div>
+
+    <a class="list-group-item" data-bs-toggle="collapse" data-bs-target="#collapsemusic3">1985 — песня Стинга «Russians».</a>
+    <div class="collapse" id="collapsemusic3">
+        <div class="card card-body">
+          Некоторый заполнитель для компонента сворачивания. Эта панель по умолчанию скрыта, но открывается, когда пользователь активирует соответствующий триггер.
+    </div>
+    </div>
+
+    <a class="list-group-item" data-bs-toggle="collapse" data-bs-target="#collapsemusic4">2009 — вышел сингл «Caribbean Crisis» от проекта Ex-Plosion. Посвящённая событиям холодной войны композиция также вошла в студийный альбом проекта, попав на первое место и в сводную двадцатку лучших Progressive House треков за 2012 год по версии британского онлайн-магазина Juno.</a>
+    <div class="collapse" id="collapsemusic4">
+        <div class="card card-body">
+          Некоторый заполнитель для компонента сворачивания. Эта панель по умолчанию скрыта, но открывается, когда пользователь активирует соответствующий триггер.
+    </div>
+    </div>
+
+    <a class="list-group-item" data-bs-toggle="collapse" data-bs-target="#collapsemusic5">2017 — песня «Завтра война» от проекта Melancholic, выпущенная в альбоме «Millennium».</a>
+<div class="collapse" id="collapsemusic5">
+        <div class="card card-body">
+          Некоторый заполнитель для компонента сворачивания. Эта панель по умолчанию скрыта, но открывается, когда пользователь активирует соответствующий триггер.
+    </div>
+    </div>
+
+    </div>
+
 </div>
 <div class="container-main">
 <h4 class="text-center">Видеоигры</h4>
@@ -42,4 +76,5 @@
     <a class="list-group-item">В 2015 году вышла игра «Armored Warfare: Проект Армата».</a>
 </div>
 </div>
+<%- include('../elements/coments'); %>
 <%- include('../elements/footer'); %>
