@@ -1,10 +1,13 @@
 .comments{
-  height: 400px;
+  height: 55vh;
+  overflow:scroll;
+  display: flex;
   color:black;
   background-color: #f4f4f4;
   margin:5px;
   padding: 20px;
   border-radius: 4px;
+  width: 100%;
 }
 .comments-main {
   	width: 100%;
@@ -13,6 +16,7 @@
 
 }
 .comments-content{
+
   color: white;
 	background-color: #60040c;
 	padding: 20px;
@@ -21,7 +25,10 @@
   	box-shadow: 0 15px 20px rgba(255, 0,0 ,0.255);
   	max-width: 1200px;
 }
+.comment{
+  background-color: green;
 
+}
 .button-comment{
    margin:10px;
   outline:none;
