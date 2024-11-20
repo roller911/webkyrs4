@@ -1,13 +1,14 @@
 .comments{
-  height: 55vh;
-  overflow:scroll;
-  display: flex;
-  color:black;
-  background-color: #f4f4f4;
-  margin:5px;
-  padding: 20px;
-  border-radius: 4px;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 55vh;
+    overflow: scroll;
+    color: black;
+    background-color: #f4f4f4;
+    margin: 5px;
+    padding: 20px;
+    border-radius: 4px;
+    width: 100%;
 }
 .comments-main {
   	width: 100%;
@@ -16,9 +17,8 @@
 
 }
 .comments-content{
-
   color: white;
-	background-color: #60040c;
+	background-color: #8B0000;
 	padding: 20px;
 	margin: auto;
   	border-radius: 5px;
@@ -26,8 +26,40 @@
   	max-width: 1200px;
 }
 .comment{
-  background-color: green;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-height: 300px;
+    margin-top:10px;
+    border-color: black;
+    background-color: green;
+}
 
+.comment p {
+    flex: 1;
+    overflow-wrap: break-word; /* Разбивает длинные слова на несколько строк */
+    word-break: break-all; /* Разрывает слова в любом месте */
+    white-space: pre-wrap; /* Сохраняет пробелы и переносы строк, но обертывает текст */
+}
+
+.image-user{
+    height: auto;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-user img{
+    width: 100%;
+    height: auto;
+    max-height: 100px;
+}
+.image-user h4{
+background-color: red;
+align-items: center;
+flex: 1;
+    overflow-wrap: break-word;
+    white-space: pre-wrap; 
 }
 .button-comment{
    margin:10px;
@@ -49,7 +81,7 @@
   transition: all 0.25s ease;
   &:hover {
     color:white;
-    background: #60040c;
+    background: #8B0000;
   }
   &:active {
     letter-spacing: 2px ;
@@ -76,7 +108,7 @@
 }
 .validate {
   font-size:13px;
-  color: #60040c;
+  color: #8B0000;
   background: #f4f4f4;
   &:after {
     content:"Выполнено";

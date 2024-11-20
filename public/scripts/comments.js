@@ -3,7 +3,8 @@
             const nameInput = document.getElementById('controlinput1');
             const commentInput = document.getElementById('controltextarea1');
             const submitButton = document.getElementById('submit-comment');
-            const timeInput = 4000;
+            const timeInput = 1000;
+
 
             submitButton.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -21,7 +22,7 @@
                             function callback() {
                                 setTimeout(function() {
                                     submitButton.classList.remove("validate");
-                                }, 2000);
+                                }, 1000);
                             }
                             callback();
                         }, timeInput);
@@ -32,8 +33,9 @@
                     setTimeout(function() { 
                       const commentHTML = `
                         <div class="comment">
-                            <h4>${name}</h4>
-                            <p>${comment}</p>
+                        <div class="image-user"><img src="/img/user.png" alt="user">
+                            <h4>${name}</h4></div
+                            <div class="text-comment"><p>${comment}</p></div>
                         </div>
                     `;
                     commentContainer.insertAdjacentHTML('beforeend', commentHTML);
@@ -42,4 +44,11 @@
                   },timeInput);
                 }
             });
+
+
+
+
+
+
+
         });

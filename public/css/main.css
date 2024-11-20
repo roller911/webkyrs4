@@ -23,13 +23,13 @@
   	margin-bottom: 20px;
   	width: 100%;
   	/*background: linear-gradient(to top, transparent 58%, rgba(255, 0, 0, 0.5) 100%);*/
-  	background: linear-gradient(to bottom,transparent 80%, rgba(205, 0, 45, 0.5) 100%); /* Градиент от прозрачного к черному */
+  	background: linear-gradient(to bottom,transparent 80%, rgba(139, 0, 0, 0.5) 100%); /* Градиент от прозрачного к черному */
 }
 .header-image {
     width: 100%;
-    height: 400px;
+    height: 250px;
     object-fit: cover;
-    border-radius: 0% 0% 10% 10%;
+    border-radius: 0% 0% 1% 1%;
     margin-bottom: 10px;
     overflow: hidden;
  		position: static;
@@ -68,30 +68,28 @@
   	box-shadow: 0 15px 20px rgba(0, 0,0 ,0.1);
   	overflow: hidden;
 }
-.container-flex{
+.container-column{
 	display: grid;
-  grid-template-columns: 1fr 1fr; 
-	width: 100%;
-	gap: 20px;
-	align-items: stretch;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+   align-items: stretch;
 }
 .container-image{
 	display: flex;
-  align-items: center; 
-  justify-content: center; 
-  
+  flex-direction: column; /* Разместить содержимое в один столбец */
+  justify-content: center; /* Выровнять содержимое по вертикали */
+  align-items: center;
 }
-.image-resize {
-  width: 100%; 
-  height: 100%;
-  object-fit: contain;
-  background-color: black;
-  border-width: 4px;
-  border-style: solid;
-  border-color: rgba(205, 0, 45, 0.5);
-  border-radius: 5px;
- 
+
+.container-image img {
+  width: 100%; /* Ширина изображения */
+  height: 100%; /* Высота изображения */
+ }
+.container-table {
+  align-items: stretch; /* Выровнять высоту таблицы с контейнером */
 }
+
+
 .carousel {
 		position: relative;
 		z-index: 1;
@@ -126,5 +124,55 @@
   border-style: solid;
   border-color: rgba(205, 0, 45, 0.5);
   border-radius: 5px;
+}
+
+
+
+@media (max-width: 400px) {
+.container-grid {
+  display: grid;
+  grid-template-rows: auto 1fr; 
+  gap: 20px; 
+  align-items: stretch; 
+}
+
+.container-image img{
+	min-height: 200px;
+	width: 100%;
+}
+.container-image {
+  grid-row: 1; /* Поместить изображение в первый ряд */
+}
+
+.container-table {
+	width: 100%;
+  grid-row: 2; /* Поместить таблицу во второй ряд */
+  height: 100%; /* Задать высоту таблицы */
+}
 
 }
+
+@media (max-width: 1000px) {
+.container-grid {
+  display: grid;
+  grid-template-rows: auto 1fr;  
+}
+
+.container-image img{
+	min-width: 400px;
+	min-height: 400px;
+	width: 100%;
+}
+.container-image {
+  grid-row: 1; /* Поместить изображение в первый ряд */
+}
+
+.container-table {
+	width: 100%;
+  grid-row: 2; /* Поместить таблицу во второй ряд */
+  height: 100%; /* Задать высоту таблицы */
+}
+
+}
+
+  

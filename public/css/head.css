@@ -1,5 +1,5 @@
 header {
-  background-color: #60040c;
+  background-color: #8B0000;
   width: 100%;
   height: 100%;
 }
@@ -24,7 +24,7 @@ header {
     top: 0;
     width: 300px;
     height: 100%;
-    background-color: #333;
+    background-color: #8B0000;
     color: white;
     transition: left 0.3s ease;
     padding: 10px;
@@ -51,8 +51,8 @@ list-style-type: none;
   position: relative;
 }
 .sidebar ul li a{
-  color:#fd1f33;
-  --fill-color: #fd1f33;
+  color:#FFFAFA;
+  --fill-color: #000000;
   display: block;
   font-size: 18px;
   font:sans-serif;
@@ -65,7 +65,7 @@ list-style-type: none;
   transition: 0.5s linear;
 }
 .sidebar ul li a:hover{
-  color: #fff;
+  color: #808080;
   background-size: 100%;
 }
 .sidebar ul li:before {
