@@ -1,19 +1,27 @@
 <div class="comments-main">
+<canvas id="canvas1"></canvas>'
 	<div class="comments-content">
 		<h2 class="">Комментарии:</h2>
-<div class="comments">
-<canvas id="canvas">
-</canvas>
+<div class="comments" id="image-user-container">
 </div>
 		<div class="comment-enter">
 		<div class="mb-3">
   		<label for="controlinput1" class="form-label">Введите своё имя</label>
   		<input type="email" class="form-control" id="controlinput1" placeholder="Имя">
 	</div>
+
 		<div class="mb-3">
   		<textarea class="form-control" id="controltextarea1" placeholder="Введите текст комментария" rows="3"></textarea>
+
+  		<select class="form-select" id="image-select" aria-label="" style="margin-top:10px">
+  <option selected>Выберите фотографию</option>
+  <option value="1">Вариант1</option>
+  <option value="2">Вариант2</option>
+  <option value="3">Вариант3</option>
+</select>
   		<button class="button-comment" id="submit-comment"></button>
 		</div>
+
 		</div>	
 </div>
 </div>

@@ -1,54 +1,65 @@
  document.addEventListener('DOMContentLoaded', function() {
-            const commentContainer = document.querySelector('.comments');
-            const nameInput = document.getElementById('controlinput1');
-            const commentInput = document.getElementById('controltextarea1');
-            const submitButton = document.getElementById('submit-comment');
-            const timeInput = 1000;
+    const commentContainer = document.querySelector('.comments');
+    const nameInput = document.getElementById('controlinput1');
+    const commentInput = document.getElementById('controltextarea1');
+    const submitButton = document.getElementById('submit-comment');
+    var timeInput = 1000;
+    let userImage = '<img src="/img/user.png" alt="user">';
+    const imageSelect = document.getElementById('image-select');
 
+    imageSelect.addEventListener('change', function(e) {
+        var selectedValue = e.target.value;
+        switch (selectedValue) {
+            case '1':
+                userImage = '<img src="/img/user.png" alt="user">';
+                break;
+            case '2':
+                userImage = '<img src="/img/img1.jpg" alt="user">';
+                break;
+            case '3':
+                userImage = '<canvas id="canvas1"></canvas>';
+                break;
+            default:
+                userImage = '<img src="/img/user.png" alt="user">';
+        }
+    });
 
-            submitButton.addEventListener('click', function(e) {
-                e.preventDefault();
-                const name = nameInput.value;
-                const comment = commentInput.value;
+    submitButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        const name = nameInput.value;
+        const comment = commentInput.value;
 
-                if (name && comment) {
-                    submitButton.classList.add("onclic");
+        if (name && comment) {
+            submitButton.classList.toggle("onclic", true);
 
-                    function validate() {
+            function validate() {
+                setTimeout(function() {
+                    submitButton.classList.toggle("onclic", false);
+                    submitButton.classList.toggle("validate", true);
+
+                    function callback() {
                         setTimeout(function() {
-                            submitButton.classList.remove("onclic");
-                            submitButton.classList.add("validate");
-
-                            function callback() {
-                                setTimeout(function() {
-                                    submitButton.classList.remove("validate");
-                                }, 1000);
-                            }
-                            callback();
-                        }, timeInput);
+                            submitButton.classList.toggle("validate", false);
+                        }, 1000);
                     }
+                    callback();
+                }, timeInput);
+            }
 
-                    validate();
+            validate();
 
-                    setTimeout(function() { 
-                      const commentHTML = `
-                        <div class="comment">
-                        <div class="image-user"><img src="/img/user.png" alt="user">
-                            <h4>${name}</h4></div
-                            <div class="text-comment"><p>${comment}</p></div>
+            setTimeout(function() {
+                const commentHTML = `
+                    <div class="comment">
+                        <div class="image-user">${userImage}
+                            <h4>${name}</h4>
                         </div>
-                    `;
-                    commentContainer.insertAdjacentHTML('beforeend', commentHTML);
-                    nameInput.value = '';
-                    commentInput.value = '';
-                  },timeInput);
-                }
-            });
-
-
-
-
-
-
-
-        });
+                        <div class="text-comment"><p>${comment}</p></div>
+                    </div>`;
+                commentContainer.insertAdjacentHTML('beforeend', commentHTML);
+                nameInput.value = '';
+                commentInput.value = '';
+            }, timeInput);
+        }
+    });
+});

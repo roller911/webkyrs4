@@ -3,7 +3,6 @@
 .jpg
 img[!01].jpeg
 img[!01].jpg
-**/node_modules
 **/source
 .mp3
 .mp4

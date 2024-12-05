@@ -19,12 +19,13 @@
 .headimg{
 	position: static;
   	text-align: center;
- 	overflow: hidden;
+ 		overflow: hidden;
   	margin-bottom: 20px;
   	width: 100%;
   	/*background: linear-gradient(to top, transparent 58%, rgba(255, 0, 0, 0.5) 100%);*/
   	background: linear-gradient(to bottom,transparent 80%, rgba(139, 0, 0, 0.5) 100%); /* Градиент от прозрачного к черному */
 }
+
 .header-image {
     width: 100%;
     height: 250px;
