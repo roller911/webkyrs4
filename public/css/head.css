@@ -80,6 +80,11 @@ list-style-type: none;
   transform: translateY(-50%);
 }
 
+.sidebar hr {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
 .menu_button {
     display: inline-block;
     cursor: pointer;
@@ -94,4 +99,44 @@ list-style-type: none;
 }
 .menu-lines:hover{
   background-color: #000000;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.modal-header {
+    color: #fff;
+    background-color: #8B0000;
+    padding: 10px;
+}
+.modal-body{
+  color:black;
+}
+
+.canvas-container {
+ text-align: center;
+}
+
+.canvas-container canvas {
+    display: inline-block;
+    margin: 0 15px; /* Расстояние между элементами будет 30px в сумме */
+    border-radius: 50%;
+    border: 1px solid #000;
+}
 }

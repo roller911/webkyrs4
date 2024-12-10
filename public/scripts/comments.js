@@ -1,4 +1,4 @@
- document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     const commentContainer = document.querySelector('.comments');
     const nameInput = document.getElementById('controlinput1');
     const commentInput = document.getElementById('controltextarea1');
@@ -6,6 +6,8 @@
     var timeInput = 1000;
     let userImage = '<img src="/img/user.png" alt="user">';
     const imageSelect = document.getElementById('image-select');
+
+    loadComments();
 
     imageSelect.addEventListener('change', function(e) {
         var selectedValue = e.target.value;
@@ -48,18 +50,36 @@
 
             validate();
 
-            setTimeout(function() {
-                const commentHTML = `
-                    <div class="comment">
-                        <div class="image-user">${userImage}
-                            <h4>${name}</h4>
-                        </div>
-                        <div class="text-comment"><p>${comment}</p></div>
-                    </div>`;
-                commentContainer.insertAdjacentHTML('beforeend', commentHTML);
-                nameInput.value = '';
-                commentInput.value = '';
-            }, timeInput);
+        
+            saveComment(name, comment, userImage);
+
+            nameInput.value = '';
+            commentInput.value = '';
+
+            loadComments();
         }
     });
 });
+
+function saveComment(name, comment, userImage) {
+    const comments = JSON.parse(localStorage.getItem('comments')) || [];
+    comments.push({ name, comment, userImage });
+    localStorage.setItem('comments', JSON.stringify(comments));
+}
+
+function loadComments() {
+    const comments = JSON.parse(localStorage.getItem('comments')) || [];
+    const commentContainer = document.querySelector('.comments');
+    commentContainer.innerHTML = '';
+
+    comments.forEach(comment => {
+        const commentHTML = `
+            <div class="comment">
+                <div class="image-user">${comment.userImage}
+                    <h4>${comment.name}</h4>
+                </div>
+                <div class="text-comment"><p>${comment.comment}</p></div>
+            </div>`;
+        commentContainer.insertAdjacentHTML('beforeend', commentHTML);
+    });
+}
