@@ -29,6 +29,12 @@ app.use('/source', express.static(path.join(__dirname, 'public/source')));
 });
 
 
+app.get('/tasks', (req,res) => {
+res.setHeader('Content-Type','text/html')
+res.render('tasks');
+});
+
+
 app.listen(port, () => {
   console.log(`Сервер запущен на http://localhost:${port}`);
 });

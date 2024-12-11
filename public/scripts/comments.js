@@ -16,10 +16,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 userImage = '<img src="/img/user.png" alt="user">';
                 break;
             case '2':
-                userImage = '<img src="/img/img1.jpg" alt="user">';
+                userImage = '<img src="/img/avatar2.jpg" alt="user">';
                 break;
             case '3':
-                userImage = '<canvas id="canvas1"></canvas>';
+                userImage = '<img src="/img/avatar1.png" alt="user">';
                 break;
             default:
                 userImage = '<img src="/img/user.png" alt="user">';
