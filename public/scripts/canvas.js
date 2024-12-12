@@ -38,7 +38,6 @@ function drawPic(context) {
             pic.src = "../img/u-2.jpg";
         }
 
-        // Вызов функции рисования после загрузки страницы
         window.onload = function() {
             drawPic(context);
         };
