@@ -214,6 +214,10 @@
   height: 100%; /* Задать высоту таблицы */
 }
 
+video::-webkit-media-controls {
+  display: none;
 }
-
-  
+video {
+  pointer-events: none;
+  opacity: 0;
+}

@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const commentContainer = document.querySelector('.comments');
-    const nameInput = document.getElementById('controlinput1');
-    const commentInput = document.getElementById('controltextarea1');
-    const submitButton = document.getElementById('submit-comment');
+    var commentContainer = document.querySelector('.comments');
+    var nameInput = document.getElementById('controlinput1');
+    var commentInput = document.getElementById('controltextarea1');
+    var submitButton = document.getElementById('submit-comment');
     var timeInput = 1000;
     let userImage = '<img src="/img/user.png" alt="user">';
-    const imageSelect = document.getElementById('image-select');
+    var imageSelect = document.getElementById('image-select');
 
     loadComments();
 
@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     submitButton.addEventListener('click', function(e) {
         e.preventDefault();
-        const name = nameInput.value;
-        const comment = commentInput.value;
+        var name = nameInput.value;
+        var comment = commentInput.value;
 
         if (name && comment) {
             submitButton.classList.toggle("onclic", true);
@@ -62,14 +62,14 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function saveComment(name, comment, userImage) {
-    const comments = JSON.parse(localStorage.getItem('comments')) || [];
+    var comments = JSON.parse(localStorage.getItem('comments')) || [];
     comments.push({ name, comment, userImage });
     localStorage.setItem('comments', JSON.stringify(comments));
 }
 
 function loadComments() {
-    const comments = JSON.parse(localStorage.getItem('comments')) || [];
-    const commentContainer = document.querySelector('.comments');
+    var comments = JSON.parse(localStorage.getItem('comments')) || [];
+    var commentContainer = document.querySelector('.comments');
     commentContainer.innerHTML = '';
 
     comments.forEach(comment => {

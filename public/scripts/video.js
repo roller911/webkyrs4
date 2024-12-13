@@ -16,41 +16,42 @@
     ];
 
     function createVideoContainer(video) {
-        const listGroupItem = document.createElement('a');
+        var listGroupItem = document.createElement('a');
         listGroupItem.className = 'list-group-item';
         listGroupItem.setAttribute('data-bs-toggle', 'collapse');
         listGroupItem.setAttribute('data-bs-target', `#collapsvideo${video.id}`);
         listGroupItem.textContent = video.title;
 
-        const collapseDiv = document.createElement('div');
+        var collapseDiv = document.createElement('div');
         collapseDiv.className = 'collapse';
         collapseDiv.id = `collapsvideo${video.id}`;
 
-        const cardDiv = document.createElement('div');
+        var cardDiv = document.createElement('div');
         cardDiv.className = 'card card-body';
 
-        const videoElement = document.createElement('video');
+       var videoElement = document.createElement('video');
         videoElement.id = video.id;
-        videoElement.controls = true;
-        const source = document.createElement('source');
-        source.src = video.src;
-        source.type = 'video/mp4';
-        videoElement.appendChild(source);
+        videoElement.controls = false;
+        videoElement.src = video.src; 
+        videoElement.type = 'video/mp4';
+        videoElement.setAttribute('data-ckin', 'default');
+        videoElement.setAttribute('data-overlay', '2');
+        videoElement.setAttribute('data-color', '#0dcaf0')
 
-        const controls = document.createElement('div');
+        var controls = document.createElement('div');
         controls.className = 'video-controls';
 
-        const playButton = document.createElement('button');
+        var playButton = document.createElement('button');
         playButton.onclick = function() { playVideo(video.id); };
         playButton.textContent = 'Play';
         playButton.className = "btn btn-outline-info";
 
-        const pauseButton = document.createElement('button');
+        var pauseButton = document.createElement('button');
         pauseButton.onclick = function() { pauseVideo(video.id); };
         pauseButton.textContent = 'Pause';
         pauseButton.className = "btn btn-outline-info";
 
-        const stopButton = document.createElement('button');
+        var stopButton = document.createElement('button');
         stopButton.onclick = function() { stopVideo(video.id); };
         stopButton.textContent = 'Stop';
         stopButton.className = "btn btn-outline-info";
@@ -68,24 +69,24 @@
     }
 
     function playVideo(id) {
-        const video = document.getElementById(id);
+        var video = document.getElementById(id);
         video.play();
     }
 
     function pauseVideo(id) {
-        const video = document.getElementById(id);
+        var video = document.getElementById(id);
         video.pause();
     }
 
     function stopVideo(id) {
-        const video = document.getElementById(id);
+        var video = document.getElementById(id);
         video.pause();
         video.currentTime = 0;
     }
 
     const listGroup = document.querySelector('.list-group');
     videos.forEach(video => {
-        const { listGroupItem, collapseDiv } = createVideoContainer(video);
+        var { listGroupItem, collapseDiv } = createVideoContainer(video);
         listGroup.appendChild(listGroupItem);
         listGroup.appendChild(collapseDiv);
     });
