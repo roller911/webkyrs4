@@ -36,7 +36,7 @@
         videoElement.type = 'video/mp4';
         videoElement.setAttribute('data-ckin', 'default');
         videoElement.setAttribute('data-overlay', '2');
-        videoElement.setAttribute('data-color', '#0dcaf0')
+        videoElement.setAttribute('data-color', '#0dcaf0');
 
         var controls = document.createElement('div');
         controls.className = 'video-controls';
