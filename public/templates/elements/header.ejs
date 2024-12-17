@@ -21,51 +21,14 @@
             <li><a href="/hronology">Хронология событий</a></li>
             <li><a href="#">Последствия</a></li>
             <li><a href="/media">В исскустве</a></li>
-        </ul>
+        
         <hr />
-        <ul>
         <li><a href="#" id="settings">Настройки</a></li>
-            <div id="modal" class="modal">
-                <div class="modal-content">
-                        <div class="modal-header">
-                            <ul id="itemli">
-                            <h2>Настройки</h2>
-                        <button  id="close_modal" class="btn-close btn-close-white" aria-label="Close"></button>
-                    </div>
-                <div class="modal-body">
-                <p>Изменить цвет темы сайта</p>
-                    <div class="canvas-container">
-                        <canvas id="canvas1" width="100" height="100"></canvas>
-                        <canvas id="canvas2" width="100" height="100"></canvas>
-                    </div>
-                        <p>Изменить шрифт текста на сайте</p>
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="flexRadio" id="radio_play">
-                          <label class="form-check-label" for="radio_play">
-                            Шрифт Play
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="flexRadio" id="radio_caveat" checked>
-                          <label class="form-check-label" for="radio_caveat">
-                            Шрифт Caveat
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="flexRadio" id="radio_sans-serif">
-                          <label class="form-check-label" for="radio_sans-serif">
-                            Шрифт Sans-Serif
-                          </label>
-                        </div>
-                </div>
-            </div>
-        </div>
+            <%- include('../elements/modal'); %>
         <li><a href="/tasks">Задачи по JS</a></li>
         </ul>
     </div>
 
-
-        </div>  
 </nav>
     </header>
     <div class="headimg">
