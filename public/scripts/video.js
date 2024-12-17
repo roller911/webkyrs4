@@ -1,11 +1,11 @@
  const videos = [
         { id: 'players1', src: '/source/Fog_a_war_2003.mp4', title: '1963 — советский фильм «Каин XVIII» является аллюзией на Карибский кризис;' },
-        { id: 'players2', src: '/source/v.mp4', title: '1964 — фильм «Доктор Стрейнджлав, или Как я перестал бояться и полюбил бомбу»;' },
-        { id: 'players3', src: '/source/v.mp4', title: '1964 — фильм «Система безопасности» (англ. Fail-Safe);' },
-        { id: 'players4', src: '/source/v.mp4', title: '1969 — фильм «Топаз» Альфреда Хичкока;' },
-        { id: 'players5', src: '/source/v.mp4', title: '1991 — сериал «Квантовый скачок» (англ. Quantum Leap), серия «Атомная семейка» (англ. Nuclear Family)' },
+        { id: 'players2', src: '/source/Fog_a_war_2003.mp4', title: '1964 — фильм «Доктор Стрейнджлав, или Как я перестал бояться и полюбил бомбу»;' },
+        { id: 'players3', src: '/source/Fog_a_war_2003.mp4', title: '1964 — фильм «Система безопасности» (англ. Fail-Safe);' },
+        { id: 'players4', src: '/source/Fog_a_war_2003.mp4', title: '1969 — фильм «Топаз» Альфреда Хичкока;' },
+        { id: 'players5', src: '/source/Fog_a_war_2003.mp4', title: '1991 — сериал «Квантовый скачок» (англ. Quantum Leap), серия «Атомная семейка» (англ. Nuclear Family)' },
         { id: 'players6', src: '/source/Fog_a_war_2003.mp4', title: '1999 — фильм «Взрыв из прошлого» (англ. Blast from the Past);' },
-        { id: 'players7', src: '/source/v.mp4', title: '2000 — фильм «Тринадцать дней» (англ. Thirteen Days);' },
+        { id: 'players7', src: '/source/Fog_a_war_2003.mp4', title: '2000 — фильм «Тринадцать дней» (англ. Thirteen Days);' },
         { id: 'players8', src: '/source/Fog_a_war_2003.mp4', title: '2003 — «Туман войны»;' },							
         { id: 'players9', src: '/source/Fog_a_war_2003.mp4', title: '2009 — фильм «Хранители» (англ. Watchmen);' },	
         { id: 'players10', src: '/source/Fog_a_war_2003.mp4', title: '2009 — пародия на трилогию «Пираты Карибского моря» «Карибский кризис»;;' },	
@@ -14,7 +14,7 @@
     	{ id: 'players13', src: '/source/Fog_a_war_2003.mp4', title: '2017 — сериал «Оптимисты»;' },
     	{ id: 'players14', src: '/source/Fog_a_war_2003.mp4', title: '2020 — фильм «Игры шпионов» (англ. The Courier).' },
     ];
-
+        
     function createVideoContainer(video) {
         var listGroupItem = document.createElement('a');
         listGroupItem.className = 'list-group-item';
@@ -66,6 +66,7 @@
         collapseDiv.appendChild(cardDiv);
 
         return { listGroupItem, collapseDiv };
+       
     }
 
     function playVideo(id) {

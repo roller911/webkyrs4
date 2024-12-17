@@ -83,6 +83,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 var radios = document.querySelectorAll('input[name="flexRadio"]');
 var header = document.querySelector('header');
+var storedRadioSelect = sessionStorage.getItem('radioSelect');
+if (storedRadioSelect) {
+  document.body.style.fontFamily = storedRadioSelect;
+  radios.forEach(radio => {
+    if (radio.value === storedRadioSelect) {
+      radio.checked = true;
+    }
+  });
+}
 radios.forEach(radio => {
   radio.addEventListener('change', function(e) {
     var radioSelect;
@@ -97,8 +106,10 @@ radios.forEach(radio => {
         radioSelect = 'sans-serif';
         break;
       default:
-        radioSelect = 'Caveat'; // По умолчанию
+        radioSelect = 'sans-serif';
     }
+    fonts = sessionStorage.setItem('radioSelect', radioSelect);
     document.body.style.fontFamily = radioSelect;
+    
   });
 });
