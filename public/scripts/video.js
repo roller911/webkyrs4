@@ -85,7 +85,7 @@
         video.currentTime = 0;
     }
 
-    const listGroup = document.querySelector('.list-group');
+    const listGroup = document.querySelector('#list-video');
     videos.forEach(video => {
         var { listGroupItem, collapseDiv } = createVideoContainer(video);
         listGroup.appendChild(listGroupItem);

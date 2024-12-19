@@ -190,7 +190,9 @@
   grid-row: 2; /* Поместить таблицу во второй ряд */
   height: 100%; /* Задать высоту таблицы */
 }
-
+.carousel-inner {
+  height: 400px;
+}
 }
 
 @media (max-width: 1000px) {
@@ -212,12 +214,19 @@
 	width: 100%;
   grid-row: 2; /* Поместить таблицу во второй ряд */
   height: 100%; /* Задать высоту таблицы */
+  }
+.carousel-inner {
+  height: 600px;
+}
 }
 
-video::-webkit-media-controls {
-  display: none;
+@media (max-width: 1400px) {
+.carousel-inner {
+    height: 800px;
 }
-video {
-  pointer-events: none;
-  opacity: 0;
+}
+@media (min-width: 1600px) {
+.carousel-inner {
+    height: 100px;
+}
 }

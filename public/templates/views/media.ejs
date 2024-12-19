@@ -8,7 +8,7 @@
     
 <div class="container-main">
 <h4 class="text-center">Кино</h4>
-<div class="list-group">
+<div class="list-group" id="list-video">
    
 </div>
 </div>
@@ -60,9 +60,32 @@
 <div class="container-main">
 <h4 class="text-center">Видеоигры</h4>
 <div class="list-group">
-    <a class="list-group-item">В 2005 году вышла игра «Карибский кризис»;</a>
-    <a class="list-group-item">В 2006 году вышла игра «DEFCON»;</a>
-    <a class="list-group-item">В 2015 году вышла игра «Armored Warfare: Проект Армата».</a>
+    <a class="list-group-item" data-bs-toggle="collapse" data-bs-target="#collapsegame1">В 2005 году вышла игра «Карибский кризис»;</a>
+        <div class="collapse" id="collapsegame1">
+        <div class="card card-body">
+        <p>Скриншоты из игры:</p>
+            <canvas id="canvasU_1"></canvas>
+            <canvas id="canvasU_2" ></canvas>
+            <canvas id="canvasU_3"></canvas>
+    </div>
+    </div>
+
+    <a class="list-group-item" data-bs-toggle="collapse" data-bs-target="#collapsegame2">В 2006 году вышла игра «DEFCON»;</a>
+        <div class="collapse" id="collapsegame">
+        <div class="card card-body">
+          Некоторый заполнитель для компонента сворачивания. Эта панель по умолчанию скрыта, но открывается, когда пользователь активирует соответствующий триггер.
+    </div>
+    </div>
+
+    <a class="list-group-item" data-bs-toggle="collapse" data-bs-target="#collapsegame3">В 2015 году вышла игра «Armored Warfare: Проект Армата».</a>
+    <div class="collapse" id="collapsegame3">
+        <div class="card card-body">
+          Некоторый заполнитель для компонента сворачивания. Эта панель по умолчанию скрыта, но открывается, когда пользователь активирует соответствующий триггер.
+    </div>
+    </div>
+
+
+
 </div>
 </div>
 <%- include('../elements/coments'); %>

@@ -1,43 +1,21 @@
-function drawRoundedRect(ctx, x, y, width, height, radius) {
-    ctx.beginPath();
-    ctx.moveTo(x + radius, y);
-    ctx.arcTo(x + width, y, x + width, y + height, radius);
-    ctx.arcTo(x + width, y + height, x, y + height, radius);
-    ctx.arcTo(x, y + height, x, y, radius);
-    ctx.arcTo(x, y, x + width, y, radius);
-    ctx.closePath();
+function drawPic(context, canvasId, imageUrl, x, y, width, height) {
+    var canvas = document.getElementById(canvasId);
+    var ctx = canvas.getContext("2d");
+
+    var pic = new Image();
+    pic.onload = function () {
+        ctx.drawImage(pic, x, y, width, height);
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+
+    };
+    pic.src = imageUrl;
 }
 
-var canvas = document.getElementById("canvasU_2");
-var context = canvas.getContext("2d");
 
-document.onload = drawPic(context);
-
-function drawPic(context) {
-            var pic = new Image();
-            pic.onload = function () {
-                context.drawImage(pic, 50, 15, 200, 120);
-
-                
-                context.strokeStyle = "black";
-                context.lineWidth = 1; 
-                drawRoundedRect(context, 50, 15, 200, 120, 3); // x, y, width, height, radius
-                context.stroke();
-
-                
-                context.fillStyle = "rgba(200, 255, 199, .1)";
-                context.fillRect(50, 15, 200, 120);
-
-                
-                context.font = "24px serif"; 
-                context.fillStyle = "red"; 
-                context.textAlign = "center"; 
-                context.textBaseline = "bottom"; 
-                context.fillText("", 150, 135); 
-            };
-            pic.src = "../img/u-2.jpg";
-        }
-
-        window.onload = function() {
-            drawPic(context);
-        };
+window.onload = function() {
+    drawPic(null, "canvasU_1", "../img/game1_1.jpg", 0, 0, 100, 100);
+    drawPic(null, "canvasU_2", "../img/game1_2.jpg", 0, 0, 100, 100);
+    drawPic(null, "canvasU_3", "../img/game1_3.jpg", 0, 0, 100, 100);
+};
